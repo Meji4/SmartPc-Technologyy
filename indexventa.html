@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos Tecnológicos - SMART PC</title>
+    <style>
+        @font-face {
+            font-family: 'Audiowide';
+            src: url('Audiowide-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0b0f4b 0%, #1a237e 50%, #0b91b9 100%);
+            background-attachment: fixed;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgba(11, 15, 75, 0.9);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+        }
+
+        h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            font-size: 2rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .home-btn {
+            position: absolute;
+            left: 20px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover {
+            color: #FF5722;
+            transform: translateX(-3px);
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px;
+            gap: 25px;
+        }
+
+        .product {
+            width: 350px;
+            background-color: rgba(26, 32, 44, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+            background-color: rgba(33, 41, 56, 0.9);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .product-content {
+            padding: 20px;
+            color: #fff;
+        }
+
+        .product h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #FFEB3B;
+            min-height: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product p {
+            margin: 10px 0;
+            line-height: 1.5;
+            color: #BBDEFB;
+            min-height: 80px;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .stock {
+            font-weight: bold;
+            color: #00E5FF;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .product-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #0d47a1, #1976D2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .product-btn:hover {
+            background: linear-gradient(45deg, #FF5722, #FF9800);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: rgba(11, 15, 75, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            
+            h1 {
+                flex-direction: column;
+                font-size: 1.5rem;
+            }
+            
+            .logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .home-btn {
+                position: relative;
+                left: auto;
+                margin-bottom: 10px;
+            }
+            
+            .product {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="home-btn">Inicio</a>
+    <h1>
+        <img src="LOGO SMART.png" alt="Logo" class="logo">
+        ARTÍCULOS TECNOLÓGICOS
+    </h1>
+</header>
+
+<section class="product-container">
+    <!-- Producto 1 -->
+    <article class="product">
+        <img src="FLASH 32 GB ADATA.png" alt="Flash Memory Adata 32 GB">
+        <div class="product-content">
+            <h2>Flash Memory Adata 32 GB</h2>
+            <p>Perfecta para Almacenar su información</p>
+            <div class="product-meta">
+                <span class="price">$8.50</span>
+                <span class="stock">En stock: 5</span>
+            </div>
+      
+        </div>
+    </article>
+
+    <!-- Producto 2 -->
+    <article class="product">
+        <img src="San disk 32 gb metalica.png" alt="Flash Memory San Disk 32 GB">
+        <div class="product-content">
+            <h2>Flash Memory San Disk de 32 GB Metalica</h2>
+            <p>Perfecta para Almacenar su información marca San Disk Metalica</p>
+            <div class="product-meta">
+                <span class="price">$12</span>
+                <span class="stock">En stock: 4</span>
+            </div>
+           
+        </div>
+    </article>
+
+    <!-- Producto 3 -->
+    <article class="product">
+        <img src="disco solido.png" alt="Disco Solido Kingston">
+        <div class="product-content">
+            <h2>Disco Solido Marca Kingston</h2>
+            <p>Disco Solido Marca Kingston de 960 GB Perfecto para Acelerar su computador</p>
+            <div class="product-meta">
+                <span class="price">$68</span>
+                <span class="stock">En stock: 15</span>
+            </div>
+           
+        </div>
+    </article>
+
+    <!-- Producto 4 -->
+    <article class="product">
+        <img src="ssd 240 gb ADATA.png" alt="Disco Solido ADATA 240 GB">
+        <div class="product-content">
+            <h2>Disco Solido Marca ADATA de 240 GB</h2>
+            <p>Perfecto para Acelerar su computador.</p>
+            <div class="product-meta">
+                <span class="price">$28</span>
+                <span class="stock">En stock: 10</span>
+            </div>
+           
+        </div>
+    </article>
+
+    <!-- Producto 5 -->
+    <article class="product">
+        <img src="flash 64 gb.png" alt="Flash Memory Kingston 64 GB">
+        <div class="product-content">
+            <h2>Flash Memory de 64 GB</h2>
+            <p>Flash Memory KINGSTON DataTravelExodia de 64 gb.</p>
+            <div class="product-meta">
+                <span class="price">$12</span>
+                <span class="stock">En stock: 3</span>
+            </div>
+           
+        </div>
+    </article>
+
+    <!-- Producto 6 -->
+    <article class="product">
+        <img src="tintas genericas.png" alt="Tinta Genérica">
+        <div class="product-content">
+            <h2>Tinta Genérica para Impresoras</h2>
+            <p>Tinta genérica compatible con la mayoría de impresoras de inyección. Ideal para impresión de documentos y fotos.</p>
+            <div class="product-meta">
+                <span class="price">$15</span>
+                <span class="stock">En stock: 30</span>
+            </div>
+          
+        </div>
+    </article>
+
+    <!-- Producto 7 -->
+    <article class="product">
+        <img src="tintaas originales epson.png" alt="Tinta Original Epson">
+        <div class="product-content">
+            <h2>Tinta Original para Impresoras</h2>
+            <p>Tinta original compatible con modelos específicos de impresoras. Garantiza calidad de impresión superior y durabilidad.</p>
+            <div class="product-meta">
+                <span class="price">$25</span>
+                <span class="stock">En stock: 20</span>
+            </div>
+           
+        </div>
+    </article>
+</section>
+
+<footer>
+    <p>© 2025 SMART PC TECHNOLOGY. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

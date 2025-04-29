@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Smart PC Technology</title>
+    <style>
+        @font-face {
+            font-family: 'Audiowide';
+            src: url('Audiowide-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0b91b9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0a1d74;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            border-bottom: 1px solid #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+        }
+
+        .header-content {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .titulo {
+            font-family: 'Audiowide', sans-serif;
+            font-size: 32px;
+            margin: 10px 0 5px 0;
+            color: #c70c0c;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1.5px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .titulo:hover {
+            transform: rotate(5deg);
+            color: #FF0000;
+            text-shadow: 0 0 10px #FF0000;
+        }
+
+        .subtitulo {
+            font-size: 18px;
+            margin: 5px 0 10px 0;
+            color: #BBDEFB;
+        }
+
+        .home-btn {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .home-btn:hover {
+            background-color: #FF5722;
+            transform: scale(1.05);
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #0d47a1;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #FF5722;
+        }
+
+        footer {
+            background-color: #0d47a1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .form-container, .image-container {
+                width: 100%;
+            }
+            
+            header {
+                flex-direction: column;
+                padding: 10px;
+            }
+            
+            .home-btn {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="home-btn">Inicio</a>
+        <div class="header-content">
+            <h1 class="titulo">SMART PC - TECHNOLOGY</h1>
+            <p class="subtitulo">Servicios Tecnológicos de Calidad</p>
+        </div>
+        <div style="width: 80px;"> <!-- Espacio para alinear el título -->
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="form-container">
+            <h2>Contáctanos</h2>
+            <p>Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+            
+            <form action="#" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                
+                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
+        </div>
+
+        <div class="image-container">
+            <img src="NUEVO INICO.jpg" alt="Reparación de computadoras" class="contact-image">
+            <!-- Reemplaza 'pc-repair.jpg' con tu imagen -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Smart PC Technology. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
